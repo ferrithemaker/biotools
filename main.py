@@ -1,5 +1,23 @@
 import biotools as bt
+from PySide6.QtWidgets import QApplication, QMainWindow
+import sys
+from ui_biotools import Ui_MainWindow
 
+class MainWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    window = MainWindow()
+    window.show()
+
+    sys.exit(app.exec())
+    
+'''
 cadena = bt.readstring("bases")
 
 #print(cadena)
@@ -59,3 +77,4 @@ print(bt.reverse(bt.complement(cadenaNeta)))
 
 print((bt.transcription(bt.reverse(bt.complement(cadenaNeta)))))
 print((bt.translation(bt.transcription(bt.reverse(bt.complement(cadenaNeta))))))
+'''
