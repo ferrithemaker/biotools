@@ -35,8 +35,8 @@ def detecttype(cadena): # Nos indica si la cadena es de ARN, ADN, proteina o des
     if len(NOTarn) == 0:
         type_of_data = "arn"
     if len(NOTaa) == 0 and len(NOTadn) > 0:
-        # Normalmente los AA normalmente van en mayusculas, en cadenas cortas se puede
-        # confundir con adn si esta en minusculas.
+        # NOTA: Normalmente los AA van en mayusculas, en cadenas cortas se puede
+        # confundir con una cadena de adn si esta en minusculas.
         type_of_data = "protein"
     return type_of_data
 
