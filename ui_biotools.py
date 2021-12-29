@@ -107,21 +107,7 @@ class Ui_MainWindow(object):
         self.count_length.setObjectName(u"count_length")
         self.count_length.setGeometry(QRect(650, 530, 91, 21))
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QMenuBar(MainWindow)
-        self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 22))
-        self.menuBiotools = QMenu(self.menubar)
-        self.menuBiotools.setObjectName(u"menuBiotools")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
-        self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
-        self.menubar.addAction(self.menuBiotools.menuAction())
-        self.menuBiotools.addSeparator()
-        self.menuBiotools.addSeparator()
-        self.menuBiotools.addAction(self.actionInformation)
-        self.menuBiotools.addAction(self.actionExit)
 
         self.retranslateUi(MainWindow)
 
@@ -156,6 +142,5 @@ class Ui_MainWindow(object):
         self.t_count.setText(QCoreApplication.translate("MainWindow", u"valor t", None))
         self.length_label.setText(QCoreApplication.translate("MainWindow", u"length", None))
         self.count_length.setText(QCoreApplication.translate("MainWindow", u"valor length", None))
-        self.menuBiotools.setTitle(QCoreApplication.translate("MainWindow", u"Biotools", None))
     # retranslateUi
 
