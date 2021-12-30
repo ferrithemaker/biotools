@@ -16,7 +16,7 @@ class MainWindow(QMainWindow):
         self.ui.t_count.setText('0')
         self.ui.u_count.setText('0')
         self.ui.count_length.setText('0')
-        self.ui.autodetection_label.setText('unknown')
+        self.ui.autodetection_label.setText('UNKNOWN')
 
         # add actions to buttons
         self.ui.preprocessingButton.clicked.connect(self.preprocessingAction)

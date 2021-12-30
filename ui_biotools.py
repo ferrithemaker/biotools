@@ -130,17 +130,17 @@ class Ui_MainWindow(object):
         self.translationButton.setText(QCoreApplication.translate("MainWindow", u"Translation", None))
         self.countButton.setText(QCoreApplication.translate("MainWindow", u"Nucleotids \n"
 "Count", None))
-        self.a_label.setText(QCoreApplication.translate("MainWindow", u"a", None))
-        self.c_label.setText(QCoreApplication.translate("MainWindow", u"c", None))
-        self.g_label.setText(QCoreApplication.translate("MainWindow", u"g", None))
-        self.u_label.setText(QCoreApplication.translate("MainWindow", u"u", None))
-        self.t_label.setText(QCoreApplication.translate("MainWindow", u"t", None))
+        self.a_label.setText(QCoreApplication.translate("MainWindow", u"a:", None))
+        self.c_label.setText(QCoreApplication.translate("MainWindow", u"c:", None))
+        self.g_label.setText(QCoreApplication.translate("MainWindow", u"g:", None))
+        self.u_label.setText(QCoreApplication.translate("MainWindow", u"u:", None))
+        self.t_label.setText(QCoreApplication.translate("MainWindow", u"t:", None))
         self.a_count.setText(QCoreApplication.translate("MainWindow", u"valor a", None))
         self.c_count.setText(QCoreApplication.translate("MainWindow", u"valor c", None))
         self.g_count.setText(QCoreApplication.translate("MainWindow", u"valor g", None))
         self.u_count.setText(QCoreApplication.translate("MainWindow", u"valor u", None))
         self.t_count.setText(QCoreApplication.translate("MainWindow", u"valor t", None))
-        self.length_label.setText(QCoreApplication.translate("MainWindow", u"length", None))
+        self.length_label.setText(QCoreApplication.translate("MainWindow", u"length:", None))
         self.count_length.setText(QCoreApplication.translate("MainWindow", u"valor length", None))
     # retranslateUi
 

@@ -24,21 +24,29 @@ def getsegment(inicio, final, cadena):  # Retorna un segmento de la cadena origi
 
 
 def detecttype(cadena): # Nos indica si la cadena es de ARN, ADN, proteina o desconocido
-    cadena=preprocessing(cadena)
-    type_of_data = "unknown"
+    type_of_data = "UNKNOWN"
     NOTadn = [letra for letra in cadena.lower() if letra not in ['a', 'c', 'g', 't']]
     NOTarn = [letra for letra in cadena.lower() if letra not in ['a', 'c', 'g', 'u']]
     NOTaa = [letra for letra in cadena.lower() if letra not in ['d', 'e', 'a', 'r', 'n', 'c', 'f', 'g', 'q', 'h',
                                                                 'i', 'l', 'k', 'm', 'p', 's', 'y', 't', 'w', 'v',
                                                                 '-']]
-    if len(NOTadn) == 0 and not cadena.isspace() and len(cadena) > 0:
+    # NOTA: Normalmente los AA van en mayusculas, en cadenas cortas se puede
+    # confundir con una cadena de adn si esta en minusculas.
+
+    if len(NOTadn) == 0 and len(NOTarn) > 0 and len(NOTaa) > 0 and not cadena.isspace() and len(cadena) > 0:
         type_of_data = "ADN"
-    if len(NOTarn) == 0 and not cadena.isspace() and len(cadena) > 0:
+    if len(NOTarn) == 0 and len(NOTadn) > 0 and len(NOTaa) > 0 and not cadena.isspace() and len(cadena) > 0:
         type_of_data = "ARN"
-    if len(NOTaa) == 0 and len(NOTadn) > 0 and not cadena.isspace() and len(cadena) > 0:
-        # NOTA: Normalmente los AA van en mayusculas, en cadenas cortas se puede
-        # confundir con una cadena de adn si esta en minusculas.
+    if len(NOTaa) == 0 and len(NOTadn) > 0 and len(NOTarn) > 0 and not cadena.isspace() and len(cadena) > 0:
         type_of_data = "PROTEIN"
+    if len(NOTadn) == 0 and len(NOTarn) == 0 and len(NOTaa) > 0 and not cadena.isspace() and len(cadena) > 0:
+        type_of_data = "ADN / ARN"
+    if len(NOTadn) == 0 and len(NOTarn) == 0 and len(NOTaa) == 0 and not cadena.isspace() and len(cadena) > 0:
+        type_of_data = "ADN / ARN / PROT."
+    if len(NOTadn) == 0 and len(NOTarn) > 0 and len(NOTaa) == 0 and not cadena.isspace() and len(cadena) > 0:
+        type_of_data = "ADN / PROTEIN"
+    if len(NOTadn) > 0 and len(NOTarn) == 0 and len(NOTaa) == 0 and not cadena.isspace() and len(cadena) > 0:
+        type_of_data = "ARN / PROTEIN"
     return type_of_data
 
 
@@ -61,10 +69,10 @@ def nucleotidscount(cadena):  # Nos devuelve la cantidad de cada tipo de nucleot
 def complement(cadena):  # Nos devuelve la cadena complementaria, tanto para ARN como para ADN
     cc = ""
     type_of_data = detecttype(cadena)
-    if type_of_data == "ADN" or type_of_data == "ARN":
+    if "ADN" in type_of_data or "ARN" in type_of_data:
         for n in cadena.lower():
             if n == "a":
-                if type_of_data == "ADN":
+                if "ADN" in type_of_data:
                     cc += "t"
                 else:
                     cc += "u"
@@ -143,4 +151,6 @@ def translation(cadena):  # Nos retorna los aminoacidos de una cadena (traducci√
                 proteina += "V"
             if codon == "uaa" or codon == "uag" or codon == "uga":
                 proteina += "-"  # stop
+    if proteina == "":
+        proteina = "The input sequence must be a sequence of ADN / ARN without partial codons"
     return proteina
