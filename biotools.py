@@ -10,15 +10,14 @@ class Sequence:
     def readstring(self, file):
         f = open(file, "r")
         self.seq = f.read().strip()
+        self.preprocessing()
         f.close()
-        self.seq = self.preprocessing()
 
     # Lee una potencial seq de nucleotidos de un archivo de texto plano
     def readstringRAW(self, file):
         f = open(file, "r")
-        seq = f.read().strip()
+        self.seq = f.read().strip()
         f.close()
-        self.seq = seq
 
     # Elimina cualquier caracter que no sea nucleotido o aminoacido
     def preprocessing(self):
