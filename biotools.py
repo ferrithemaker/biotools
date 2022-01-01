@@ -5,10 +5,11 @@ class Sequence:
         else:
             self.seq = seq
 
-    # Lee una potencial seq de nucleotidos de un archivo de texto plano y lo limpia
+    # Lee una potencial seq de nucleotidos de un archivo
+    # de texto plano y lo limpia
     def readstring(self, file):
         f = open(file, "r")
-        seq = f.read().strip()
+        self.seq = f.read().strip()
         f.close()
         self.seq = self.preprocessing()
 
@@ -22,9 +23,11 @@ class Sequence:
     # Elimina cualquier caracter que no sea nucleotido o aminoacido
     def preprocessing(self):
         self.seq = ''.join([letra for letra in self.seq.lower()
-                                if letra in ['d', 'e', 'a', 'r', 'n', 'c', 'f', 'g', 'q',
-                                'h', 'i', 'l', 'k', 'm', 'p', 's', 'y', 't', 'w', 'v', 'u', '-']])
-
+                            if letra in ['d', 'e', 'a', 'r', 'n',
+                                         'c', 'f', 'g', 'q', 'h',
+                                         'i', 'l', 'k', 'm', 'p',
+                                         's', 'y', 't', 'w', 'v',
+                                         'u', '-']])
 
     # Nos devuelve un segmento de la seq original
     def getsegment(self, inicio, final):
@@ -119,11 +122,14 @@ class Sequence:
     # Nos devuelve los aminoacidos de una seq (traducción)
     def translation(self):
         proteina = ""
+        print(len(self.seq))
+        print(self.seq)
         # solo se realiza la traducción si los codones estan enteros
         if len(self.seq) % 3 == 0:
             # realizamos la transcripción
-            seq = self.transcription()
+            self.transcription()
             while len(self.seq) >= 3:
+                print("dins"+str(len(self.seq)))
                 codon = self.seq[0] + self.seq[1] + self.seq[2]
                 self.seq = self.seq[3:]
                 codon = codon.lower()

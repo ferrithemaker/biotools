@@ -3,7 +3,9 @@ from PySide6.QtWidgets import QApplication, QMainWindow
 import sys
 from ui_biotools import Ui_MainWindow
 
+
 class MainWindow(QMainWindow):
+
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -67,7 +69,8 @@ class MainWindow(QMainWindow):
         self.sequence.translation()
         if self.sequence.seq == "":
             self.ui.output_sequence.setText("The input sequence must "
-                                            "be a sequence of ADN / ARN without partial codons")
+                                            "be a sequence of ADN / ARN "
+                                            "without partial codons")
         else:
             self.ui.output_sequence.setText(self.sequence.seq)
 
@@ -81,6 +84,7 @@ class MainWindow(QMainWindow):
         self.ui.g_count.setText(str(nc["g"]))
         self.ui.t_count.setText(str(nc["t"]))
         self.ui.u_count.setText(str(nc["u"]))
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
