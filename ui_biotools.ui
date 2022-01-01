@@ -14,326 +14,176 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="input_sequence">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>70</y>
-      <width>491</width>
-      <height>161</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="IS_label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Input sequence:</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="output_sequence">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>320</y>
-      <width>491</width>
-      <height>161</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="OS_label">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>280</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Output sequence:</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="preprocessingButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>40</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Preprocessing</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="autodetectionButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>90</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Autodetection</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="autodetection_label">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>140</y>
-      <width>141</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Autodetected type</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="reverseButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>180</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Reverse</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="complementButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>230</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Complement</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="RCButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>280</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Reverse + Complement</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="transcriptionButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>330</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Transcription</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="translationButton">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>380</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Translation</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="countButton">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>440</y>
-      <width>81</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Nucleotids 
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="14" column="2" colspan="2">
+     <widget class="QLabel" name="t_label">
+      <property name="text">
+       <string>t:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="5">
+     <widget class="QLabel" name="autodetection_label">
+      <property name="text">
+       <string>Autodetected type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="2">
+     <widget class="QLabel" name="u_label">
+      <property name="text">
+       <string>u:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="2" colspan="2">
+     <widget class="QLabel" name="a_label">
+      <property name="text">
+       <string>a:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="4">
+     <widget class="QLabel" name="g_count">
+      <property name="text">
+       <string>valor g</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="4">
+     <widget class="QLabel" name="t_count">
+      <property name="text">
+       <string>valor t</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="2" colspan="2">
+     <widget class="QLabel" name="c_label">
+      <property name="text">
+       <string>c:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="2">
+     <widget class="QLabel" name="length_label">
+      <property name="text">
+       <string>Length:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="OS_label">
+      <property name="text">
+       <string>Output sequence:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" rowspan="3">
+     <widget class="QTextEdit" name="input_sequence"/>
+    </item>
+    <item row="0" column="1" colspan="5">
+     <widget class="QPushButton" name="preprocessingButton">
+      <property name="text">
+       <string>Preprocessing</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="4">
+     <widget class="QLabel" name="a_count">
+      <property name="text">
+       <string>valor a</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="5">
+     <widget class="QPushButton" name="reverseButton">
+      <property name="text">
+       <string>Reverse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="5">
+     <widget class="QPushButton" name="complementButton">
+      <property name="text">
+       <string>Complement</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="5">
+     <widget class="QPushButton" name="transcriptionButton">
+      <property name="text">
+       <string>Transcription</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="IS_label">
+      <property name="text">
+       <string>Input sequence:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1" colspan="5">
+     <widget class="QPushButton" name="translationButton">
+      <property name="text">
+       <string>Translation</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0" rowspan="7">
+     <widget class="QTextEdit" name="output_sequence"/>
+    </item>
+    <item row="11" column="2">
+     <widget class="QLabel" name="g_label">
+      <property name="text">
+       <string>g:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="12" column="4">
+     <widget class="QLabel" name="u_count">
+      <property name="text">
+       <string>valor u</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="5">
+     <widget class="QPushButton" name="autodetectionButton">
+      <property name="text">
+       <string>Autodetection</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="5">
+     <widget class="QPushButton" name="revCompButton">
+      <property name="text">
+       <string>Reverse + Complement</string>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="4">
+     <widget class="QLabel" name="count_length">
+      <property name="text">
+       <string>valor length</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="4">
+     <widget class="QLabel" name="c_count">
+      <property name="text">
+       <string>valor c</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1" colspan="5">
+     <widget class="QPushButton" name="countButton">
+      <property name="text">
+       <string>Nucleotids 
 Count</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="a_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>430</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>a</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="c_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>450</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>c</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="g_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>470</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>g</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="u_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>490</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>u</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="t_label">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>510</y>
-      <width>16</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>t</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="a_count">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>430</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor a</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="c_count">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>450</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor c</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="g_count">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>470</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor g</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="u_count">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>490</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor u</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="t_count">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>510</y>
-      <width>51</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor t</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="length_label">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>530</y>
-      <width>61</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>length</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="count_length">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>530</y>
-      <width>91</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>valor length</string>
-    </property>
-   </widget>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -344,16 +194,6 @@ Count</string>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuBiotools">
-    <property name="title">
-     <string>Biotools</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="separator"/>
-    <addaction name="actionInformation"/>
-    <addaction name="actionExit"/>
-   </widget>
-   <addaction name="menuBiotools"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">

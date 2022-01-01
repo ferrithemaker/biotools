@@ -18,55 +18,63 @@ class MainWindow(QMainWindow):
         self.ui.count_length.setText('0')
         self.ui.autodetection_label.setText('UNKNOWN')
 
+        # create sequence object
+        self.sequence = bt.Sequence()
+
         # add actions to buttons
         self.ui.preprocessingButton.clicked.connect(self.preprocessingAction)
         self.ui.autodetectionButton.clicked.connect(self.autodetectionAction)
         self.ui.reverseButton.clicked.connect(self.reverseAction)
         self.ui.complementButton.clicked.connect(self.complementAction)
-        self.ui.RCButton.clicked.connect(self.RCAction)
+        self.ui.revCompButton.clicked.connect(self.revCompAction)
         self.ui.transcriptionButton.clicked.connect(self.transcriptionAction)
         self.ui.translationButton.clicked.connect(self.translationAction)
         self.ui.countButton.clicked.connect(self.countAction)
 
     def preprocessingAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.preprocessing(inputText)
-        self.ui.output_sequence.setText(outputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.preprocessing()
+        self.ui.output_sequence.setText(self.sequence.seq)
 
     def autodetectionAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        detectedType = bt.detecttype(inputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        detectedType = self.sequence.detecttype()
         self.ui.autodetection_label.setText(detectedType)
 
     def reverseAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.reverse(inputText)
-        self.ui.output_sequence.setText(outputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.reverse()
+        self.ui.output_sequence.setText(self.sequence.seq)
 
     def complementAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.complement(inputText)
-        self.ui.output_sequence.setText(outputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.complement()
+        self.ui.output_sequence.setText(self.sequence.seq)
 
-    def RCAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.complement(bt.reverse(inputText))
-        self.ui.output_sequence.setText(outputText)
+    def revCompAction(self):
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.complement()
+        self.sequence.reverse()
+        self.ui.output_sequence.setText(self.sequence.seq)
 
     def transcriptionAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.transcription(inputText)
-        self.ui.output_sequence.setText(outputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.transcription()
+        self.ui.output_sequence.setText(self.sequence.seq)
 
     def translationAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        outputText = bt.translation(inputText)
-        self.ui.output_sequence.setText(outputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        self.sequence.translation()
+        if self.sequence.seq == "":
+            self.ui.output_sequence.setText("The input sequence must "
+                                            "be a sequence of ADN / ARN without partial codons")
+        else:
+            self.ui.output_sequence.setText(self.sequence.seq)
 
     def countAction(self):
-        inputText = self.ui.input_sequence.toPlainText()
-        length = bt.length(inputText)
-        nc = bt.nucleotidscount(inputText)
+        self.sequence.seq = self.ui.input_sequence.toPlainText()
+        length = self.sequence.length()
+        nc = self.sequence.nucleotidscount()
         self.ui.count_length.setText(str(length))
         self.ui.a_count.setText(str(nc["a"]))
         self.ui.c_count.setText(str(nc["c"]))
