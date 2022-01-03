@@ -1,15 +1,27 @@
 import biotools as bt
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget
+from PySide6.QtGui import QAction
 import sys
 from ui_biotools import Ui_MainWindow
+from ui_biotools_about import Ui_Frame
 
 
-class MainWindow(QMainWindow):
+class BioToolsAbout(QWidget):
+
+    def __init__(self, parent=None):
+        QWidget.__init__(self)
+        self.ui = Ui_Frame()
+        self.ui.setupUi(self)
+        self.setWindowTitle("About")
+
+
+class BioToolsMainWindow(QMainWindow):
 
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setWindowTitle("Python Biotools UI")
 
         # initial setup
         self.ui.a_count.setText('0')
@@ -32,6 +44,25 @@ class MainWindow(QMainWindow):
         self.ui.transcriptionButton.clicked.connect(self.transcriptionAction)
         self.ui.translationButton.clicked.connect(self.translationAction)
         self.ui.countButton.clicked.connect(self.countAction)
+
+        # add menu actions
+
+        # exit action
+        exit_action = QAction("Exit", self)
+        exit_action.triggered.connect(self.exitApp)
+        self.ui.menu.addAction(exit_action)
+
+        # about action
+        about_action = QAction("About", self)
+        about_action.triggered.connect(self.openAbout)
+        self.ui.menu.addAction(about_action)
+
+    def exitApp(self):
+        QApplication.quit()
+
+    def openAbout(self):
+        self.aboutWidget = BioToolsAbout(self)
+        self.aboutWidget.show()
 
     def preprocessingAction(self):
         self.sequence.seq = self.ui.input_sequence.toPlainText()
@@ -89,7 +120,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    window = MainWindow()
+    window = BioToolsMainWindow()
     window.show()
 
     sys.exit(app.exec())
