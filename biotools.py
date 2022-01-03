@@ -41,8 +41,8 @@ class Sequence:
                   if letra not in ['a', 'c', 'g', 'u']]
         NOTaa = [letra for letra in self.seq.lower()
                  if letra not in ['d', 'e', 'a', 'r', 'n', 'c', 'f', 'g',
-                                  'q', 'h', 'i', 'l', 'k', 'm', 'p', 's', 'y',
-                                  't', 'w', 'v', '-']]
+                                  'q', 'h', 'i', 'l', 'k', 'm', 'p', 's',
+                                  'y', 't', 'w', 'v', '-']]
 
         if len(NOTadn) == 0 and len(NOTarn) > 0 and len(NOTaa) > 0 \
                 and not self.seq.isspace() and len(self.seq) > 0:
@@ -98,9 +98,7 @@ class Sequence:
                     cc += "g"
                 if n == "g":
                     cc += "c"
-                if n == "t":
-                    cc += "a"
-                if n == "u":
+                if n == "t" or n == "u":
                     cc += "a"
                 if n == " ":
                     cc += " "
@@ -128,7 +126,6 @@ class Sequence:
             # realizamos la transcripción
             self.transcription()
             while len(self.seq) >= 3:
-                print("dins"+str(len(self.seq)))
                 codon = self.seq[0] + self.seq[1] + self.seq[2]
                 self.seq = self.seq[3:]
                 codon = codon.lower()
