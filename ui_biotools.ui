@@ -183,6 +183,13 @@ Count</string>
       </property>
      </widget>
     </item>
+    <item row="15" column="0">
+     <widget class="QPushButton" name="copy2inputButton">
+      <property name="text">
+       <string>Copy sequence to input</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -194,6 +201,12 @@ Count</string>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+   </widget>
+   <addaction name="menu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">
@@ -204,6 +217,16 @@ Count</string>
   <action name="actionInformation">
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionExit_2">
+   <property name="text">
+    <string>Exit</string>
    </property>
   </action>
  </widget>

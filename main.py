@@ -44,6 +44,7 @@ class BioToolsMainWindow(QMainWindow):
         self.ui.transcriptionButton.clicked.connect(self.transcriptionAction)
         self.ui.translationButton.clicked.connect(self.translationAction)
         self.ui.countButton.clicked.connect(self.countAction)
+        self.ui.copy2inputButton.clicked.connect(self.copy2inputAction)
 
         # add menu actions
 
@@ -63,6 +64,11 @@ class BioToolsMainWindow(QMainWindow):
     def openAbout(self):
         self.aboutWidget = BioToolsAbout(self)
         self.aboutWidget.show()
+
+    def copy2inputAction(self):
+        if self.ui.output_sequence.toPlainText() != "":
+            self.ui.input_sequence.setText(self.ui.output_sequence.toPlainText())
+            self.ui.output_sequence.setText("")
 
     def preprocessingAction(self):
         self.sequence.seq = self.ui.input_sequence.toPlainText()

@@ -17,8 +17,8 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
 from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QTextEdit, QWidget)
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QStatusBar, QTextEdit, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,6 +29,10 @@ class Ui_MainWindow(object):
         self.actionExit.setObjectName(u"actionExit")
         self.actionInformation = QAction(MainWindow)
         self.actionInformation.setObjectName(u"actionInformation")
+        self.actionAbout = QAction(MainWindow)
+        self.actionAbout.setObjectName(u"actionAbout")
+        self.actionExit_2 = QAction(MainWindow)
+        self.actionExit_2.setObjectName(u"actionExit_2")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -158,14 +162,23 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.countButton, 8, 1, 1, 5)
 
+        self.copy2inputButton = QPushButton(self.centralwidget)
+        self.copy2inputButton.setObjectName(u"copy2inputButton")
+
+        self.gridLayout.addWidget(self.copy2inputButton, 15, 0, 1, 1)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 800, 22))
+        self.menu = QMenu(self.menubar)
+        self.menu.setObjectName(u"menu")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
         MainWindow.setStatusBar(self.statusbar)
+
+        self.menubar.addAction(self.menu.menuAction())
 
         self.retranslateUi(MainWindow)
 
@@ -176,6 +189,8 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.actionExit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.actionInformation.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.actionAbout.setText(QCoreApplication.translate("MainWindow", u"About", None))
+        self.actionExit_2.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.t_label.setText(QCoreApplication.translate("MainWindow", u"t:", None))
         self.autodetection_label.setText(QCoreApplication.translate("MainWindow", u"Autodetected type", None))
         self.u_label.setText(QCoreApplication.translate("MainWindow", u"u:", None))
@@ -200,5 +215,7 @@ class Ui_MainWindow(object):
         self.c_count.setText(QCoreApplication.translate("MainWindow", u"valor c", None))
         self.countButton.setText(QCoreApplication.translate("MainWindow", u"Nucleotids \n"
 "Count", None))
+        self.copy2inputButton.setText(QCoreApplication.translate("MainWindow", u"Copy sequence to input", None))
+        self.menu.setTitle(QCoreApplication.translate("MainWindow", u"Menu", None))
     # retranslateUi
 
