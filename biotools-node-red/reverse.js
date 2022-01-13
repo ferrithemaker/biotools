@@ -3,7 +3,7 @@ module.exports = function(RED) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', function(msg) {
-            msg.payload = msg.payload.str.split("").reverse().join("");
+            msg.payload = msg.payload.split("").reverse().join("");
             node.send(msg);
         });
     }
