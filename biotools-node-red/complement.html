@@ -1,0 +1,29 @@
+<script type="text/javascript">
+    RED.nodes.registerType('complement',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            seqtype: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"complement";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="complement">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name"><br />
+        <label for="node-input-seqtype"><i class="fa fa-tag"></i> Type</label>
+        <input type="text" id="node-input-seqtype" placeholder="Original Sequence type">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="complement">
+    <p>A node that returns ADN / ARN complementary sequence</p>
+</script>
