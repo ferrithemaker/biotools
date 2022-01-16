@@ -11,7 +11,20 @@
         icon: "font-awesome/fa-exchange",
         label: function() {
             return this.name||"complement";
-        }
+        },
+        oneditprepare: function() {
+			$("#node-input-seqtype").typedInput({
+				types: [
+				{
+					value: "seqtype",
+					options: [
+						{ value: "ADN", label: "ADN"},
+						{ value: "ARN", label: "ARN"}
+					]
+				}
+				]
+			});
+		}
     });
 </script>
 
@@ -19,7 +32,9 @@
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name"><br />
-        <label for="node-input-seqtype"><i class="fa fa-tag"></i> Type</label>
+    </div>
+    <div class="form-row">
+		<label for="node-input-seqtype"><i class="fa fa-tag"></i> Original Sequence</label>
         <input type="text" id="node-input-seqtype" placeholder="Original Sequence type">
     </div>
 </script>

@@ -15,10 +15,10 @@ module.exports = function(RED) {
 				if (inputchar == 'u') {
 					outputchar = 'a'; 
 				}
-				if (inputchar == 'a' && config.seqtype == "ADN") {
+				if (inputchar == 'a' && config.seqtype.toLowerCase() == "adn") {
 					outputchar = 't';
 				}
-				if (inputchar == 'a' && config.seqtype == "ARN") {
+				if (inputchar == 'a' && config.seqtype.toLowerCase() == "arn") {
 					outputchar = 'u';
 				}
 				if (inputchar == 'c') {
