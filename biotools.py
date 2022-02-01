@@ -19,6 +19,12 @@ class Sequence:
         self.seq = f.read().strip()
         f.close()
 
+    # Guarda una seq en un archivo de texto plano
+    def writestring(self, file):
+        f = open(file, "w")
+        f.write(self.seq)
+        f.close()
+
     # Elimina cualquier caracter que no sea nucleotido o aminoacido
     def preprocessing(self):
         self.seq = ''.join([letra for letra in self.seq.lower()
