@@ -1,16 +1,17 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "keywords": [
     "node-red",
     "bioinformatics",
-    "bio"
+    "bio",
+    "genetics"
   ],
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
       "reverse": "reverse.js",
-      "preprocessing": "preprocessing.js",
+      "rawprocessing": "rawprocessing.js",
       "complement": "complement.js",
       "transcription": "transcription.js",
       "translation": "translation.js"

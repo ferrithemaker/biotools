@@ -6,10 +6,10 @@ module.exports = function(RED) {
             var inputchar = "";
             var codon = "";
             var proteina = "";
-            if (msg.payload.length % 3 == 0) {
-				while (msg.payload.length >= 3) {
-					codon = msg.payload[0] + msg.payload[1] + msg.payload[2];
-					msg.payload = msg.payload.substring(3);
+            if (msg.payload.sequence.length % 3 == 0) {
+				while (msg.payload.sequence.length >= 3) {
+					codon = msg.payload.sequence[0] + msg.payload.sequence[1] + msg.payload.sequence[2];
+					msg.payload.sequence = msg.payload.sequence.substring(3);
 					codon = codon.toLowerCase();
 					if (codon == "gac" || codon == "gau") { proteina += "D"; }
 					if (codon == "gaa" || codon == "gag") { proteina += "E"; }
@@ -34,7 +34,7 @@ module.exports = function(RED) {
 					if (codon == "uaa" || codon == "uag" || codon == "uga") { proteina += "-"; }
 				}
 			}
-			msg.payload = proteina;
+			msg.payload.sequence = proteina;
             node.send(msg);
         });
     }

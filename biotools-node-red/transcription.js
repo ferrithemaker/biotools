@@ -5,14 +5,14 @@ module.exports = function(RED) {
         node.on('input', function(msg) {
             var inputchar = "";
             var output = "";
-			for (var i = 0; i < msg.payload.length; i++) {
-				inputchar = msg.payload[i].toLowerCase();
+			for (var i = 0; i < msg.payload.sequence.length; i++) {
+				inputchar = msg.payload.sequence[i].toLowerCase();
 				if (inputchar == 't') {
 					inputchar = 'u';
 				}
 				output += inputchar;
 			}
-			msg.payload = output;
+			msg.payload.sequence = output;
             node.send(msg);
         });
     }

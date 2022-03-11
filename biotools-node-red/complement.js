@@ -6,8 +6,8 @@ module.exports = function(RED) {
             var inputchar;
             var outputchar;
             var output = "";
-			for (var i = 0; i < msg.payload.length; i++) {
-				inputchar = msg.payload[i].toLowerCase();
+			for (var i = 0; i < msg.payload.sequence.length; i++) {
+				inputchar = msg.payload.sequence[i].toLowerCase();
 				outputchar = inputchar;
 				if (inputchar == 't') {
 					outputchar = 'a'; 
@@ -29,7 +29,7 @@ module.exports = function(RED) {
 				}
 				output += outputchar;
 			}
-			msg.payload = output; 		
+			msg.payload.sequence = output; 		
             node.send(msg);
         });
     }
