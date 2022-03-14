@@ -27,6 +27,39 @@ module.exports = function(RED) {
 				if (inputchar == 'g') {
 					outputchar = 't';
 				}
+				if (inputchar == 'w') {
+					outputchar = 'w';
+				}
+				if (inputchar == 's') {
+					outputchar = 's';
+				}
+				if (inputchar == 'm') {
+					outputchar = 'k';
+				}
+				if (inputchar == 'k') {
+					outputchar = 'm';
+				}
+				if (inputchar == 'r') {
+					outputchar = 'y';
+				}
+				if (inputchar == 'y') {
+					outputchar = 'r';
+				}
+				if (inputchar == 'b') {
+					outputchar = 'v';
+				}
+				if (inputchar == 'd') {
+					outputchar = 'h';
+				}
+				if (inputchar == 'h') {
+					outputchar = 'd';
+				}
+				if (inputchar == 'v') {
+					outputchar = 'b';
+				}
+				if (inputchar == 'n') {
+					outputchar = 'n';
+				}
 				output += outputchar;
 			}
 			msg.payload.sequence = output; 		

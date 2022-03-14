@@ -1,17 +1,17 @@
 <script type="text/javascript">
-    RED.nodes.registerType('processing RAW data',{
+    RED.nodes.registerType('processing FASTA file',{
         category: 'biotools',
         color: '#def0ad',
         defaults: {
             name: {value:""},
-            seqtype: {value:"nucleotides"},
-            degenerate: {value:"no"}
+            seqtype: {value:""},
+            number: {value:1}
         },
         inputs:1,
         outputs:1,
         icon: "font-awesome/fa-exchange",
         label: function() {
-            return this.name||"processing (RAW)";
+            return this.name||"processing FASTA file";
         },
         oneditprepare: function() {
 			$("#node-input-seqtype").typedInput({
@@ -24,24 +24,12 @@
 					]
 				}
 				]
-			}),
-			$("#node-input-degenerate").typedInput({
-				types: [
-				{
-					value: "degenerate",
-					options: [
-						{ value: "no", label: "No"},
-						{ value: "yes", label: "Yes"}
-					]
-				}
-				]
 			});
 		}
-		
     });
 </script>
 
-<script type="text/html" data-template-name="processing RAW data">
+<script type="text/html" data-template-name="processing FASTA file">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -51,11 +39,11 @@
         <input type="text" id="node-input-seqtype">
     </div>
     <div class="form-row">
-		<label for="node-input-degenerate"><i class="fa fa-tag"></i> Allow degenerate base symbols</label>
-        <input type="text" id="node-input-degenerate">
+        <label for="node-input-number"><i class="fa fa-tag"></i> Seq. Number</label>
+        <input type="text" id="node-input-number" placeholder="Seq. Number">
     </div>
 </script>
 
-<script type="text/html" data-help-name="processing RAW data">
-    <p>Cleans a RAW non formated ADN / ARN sequence removing all not nucleotide / proteine data</p>
+<script type="text/html" data-help-name="processing FASTA file">
+    <p>Reads generic FASTA file</p>
 </script>

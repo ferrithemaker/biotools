@@ -8,10 +8,22 @@ module.exports = function(RED) {
 			for (var i = 0; i < msg.payload.length; i++) {
 				char = msg.payload[i].toLowerCase();
 				if (config.seqtype.toLowerCase() == "nucleotides") {
-					if (char == 'a' || char == 'c' || char == "g" || 
-						char == 't' || char == 'u') {
-						output += char;
+					if (config.degenerate == "no") {
+						if (char == 'a' || char == 'c' || char == "g" || 
+							char == 't' || char == 'u') {
+								output += char;
+						}
+					} else {
+						if (char == 'a' || char == 'c' || char == "g" || 
+							char == 't' || char == 'u' || char == "k" ||
+							char == 's' || char == 'y' || char == "m" ||
+							char == 'w' || char == 'r' || char == "b" ||
+							char == 'd' || char == 'h' || char == "v" ||
+							char == '-' ) {
+								output += char;
+						}
 					}
+					
 				}
 				if (config.seqtype.toLowerCase() == "proteins") {
 					if (char == 'a' || char == "d" || char == 'e' ||
@@ -21,12 +33,17 @@ module.exports = function(RED) {
 						char == 'k' || char == "m" || char == 'p' ||
 						char == 's' || char == "y" || char == 't' ||
 						char == 'w' || char == "v" || char == 'u' ||
-						char == '-') {
-						output += char;
+						char == '*' || char == '-') {
+							output += char;
 					}
 				}
 			}
-			msg.payload = { "sequence":output }
+			if (config.seqtype.toLowerCase() == "nucleotides") {
+				msg.payload = { "sequence": output.toUpperCase() ,"protein": "" ,"information": ""}
+			}
+			if (config.seqtype.toLowerCase() == "proteins") {
+				msg.payload = { "sequence": "", "protein": output.toUpperCase() ,"information": ""}
+			}
             node.send(msg);
         });
     }

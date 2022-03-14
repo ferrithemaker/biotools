@@ -31,10 +31,10 @@ module.exports = function(RED) {
 					if (codon == "aca" || codon == "acc" || codon == "acg" || codon == "acu") { proteina += "T"; }
 					if (codon == "ugg") { proteina += "W"; }
 					if (codon == "gua" || codon == "guc" || codon == "gug" || codon == "guu") { proteina += "V"; }
-					if (codon == "uaa" || codon == "uag" || codon == "uga") { proteina += "-"; }
+					if (codon == "uaa" || codon == "uag" || codon == "uga") { proteina += "*"; }
 				}
 			}
-			msg.payload.sequence = proteina;
+			msg.payload.protein = proteina;
             node.send(msg);
         });
     }
