@@ -1,5 +1,5 @@
 module.exports = function(RED) {
-    function TranscriptionNode(config) {
+    function transcriptionNode(config) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', function(msg) {
@@ -16,5 +16,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("transcription",TranscriptionNode);
+    RED.nodes.registerType("transcription",transcriptionNode);
 }

@@ -1,5 +1,5 @@
 module.exports = function(RED) {
-    function ComplementNode(config) {
+    function complementNode(config) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', function(msg) {
@@ -66,5 +66,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("complement",ComplementNode);
+    RED.nodes.registerType("complement",complementNode);
 }

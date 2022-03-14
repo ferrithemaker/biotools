@@ -1,5 +1,5 @@
 module.exports = function(RED) {
-    function TranslationNode(config) {
+    function translationNode(config) {
         RED.nodes.createNode(this,config);
         var node = this;
         node.on('input', function(msg) {
@@ -38,5 +38,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("translation",TranslationNode);
+    RED.nodes.registerType("translation",translationNode);
 }
