@@ -1,6 +1,8 @@
 This package is a node-red module implementing some bioinformatic tools such as:
 
-- Preprocessing.
+- RAW sequence preprocessing.
+- FASTA file reading and parsing.
+- Genbank file reading and parsing.
 - Reverse sequencing.
 - Complementary sequence (Parameters: ADN / ARN).
 - Transcription.
