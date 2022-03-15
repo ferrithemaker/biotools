@@ -1,17 +1,17 @@
 <script type="text/javascript">
-    RED.nodes.registerType('processing FASTA file',{
+    RED.nodes.registerType('processing Genbank file',{
         category: 'biotools',
         color: '#def0ad',
         defaults: {
             name: {value:""},
-            seqtype: {value:"nucleotides"},
+            seqtype: {value:"complete"},
             number: {value:1}
         },
         inputs:1,
         outputs:1,
         icon: "font-awesome/fa-exchange",
         label: function() {
-            return this.name||"processing FASTA file";
+            return this.name||"processing Genbank file";
         },
         oneditprepare: function() {
 			$("#node-input-seqtype").typedInput({
@@ -19,8 +19,8 @@
 				{
 					value: "seqtype",
 					options: [
-						{ value: "nucleotides", label: "Nucleotides"},
-						{ value: "proteins", label: "Proteins"}
+						{ value: "complete", label: "Complete"},
+						{ value: "CDS", label: "CDS"}
 					]
 				}
 				]
@@ -29,7 +29,7 @@
     });
 </script>
 
-<script type="text/html" data-template-name="processing FASTA file">
+<script type="text/html" data-template-name="processing Genbank file">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -39,11 +39,11 @@
         <input type="text" id="node-input-seqtype">
     </div>
     <div class="form-row">
-        <label for="node-input-number"><i class="fa fa-tag"></i> Seq. Number</label>
-        <input type="text" id="node-input-number" placeholder="Seq. Number">
+        <label for="node-input-number"><i class="fa fa-tag"></i> CDS Number</label>
+        <input type="text" id="node-input-number" placeholder="CDS Number">
     </div>
 </script>
 
-<script type="text/html" data-help-name="processing FASTA file">
-    <p>Reads generic FASTA file</p>
+<script type="text/html" data-help-name="processing Genbank file">
+    <p>Reads generic Genbank file</p>
 </script>
