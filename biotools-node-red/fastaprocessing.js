@@ -25,7 +25,7 @@ module.exports = function(RED) {
 						if (info.length >= 2) {
 							id = info[1];
 						}
-						if (info.length >= 2) {
+						if (info.length >= 3) {
 							infodata1 = info[2];
 						}
 						
