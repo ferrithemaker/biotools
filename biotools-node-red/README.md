@@ -7,6 +7,7 @@ This package is a node-red module implementing some bioinformatic tools such as:
 - Complementary sequence (Parameters: ADN / ARN).
 - Transcription.
 - Translation.
+- Sequence management.
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 

@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Get subsequence',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            from: {value:1},
+            to: {value:1}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"Get subsequence";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="Get subsequence">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-from"><i class="fa fa-tag"></i> From</label>
+        <input type="text" id="node-input-from" placeholder="From">
+    </div>
+    <div class="form-row">
+        <label for="node-input-to"><i class="fa fa-tag"></i> To</label>
+        <input type="text" id="node-input-to" placeholder="To">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="Get subsequence">
+    <p>Returns a partial subsequence of the original input nucleotide sequence</p>
+</script>
