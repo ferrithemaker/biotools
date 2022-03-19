@@ -27,7 +27,7 @@ module.exports = function(RED) {
 				// get PROTEIN ID
 				while ((cdsNumber = msg.payload.indexOf("/protein_id=",cdsNumber+1)) >= 0) proteinArray.push(cdsNumber);
 				if (config.number <= proteinArray.length) {
-					protein = proteinArray[config.number-1] + 13;
+					protein = proteinArray[config.number-1] + "/protein_id=".length + 1;
 					while (msg.payload[protein] != '"') {
 						genBankInfo = genBankInfo + msg.payload[protein];
 						protein++;
@@ -37,7 +37,7 @@ module.exports = function(RED) {
 				// CDS translation
 				while ((cdsNumber = msg.payload.indexOf("/translation=",cdsNumber+1)) >= 0) cdsArray.push(cdsNumber);
 				if (config.number <= cdsArray.length) {
-					cds = cdsArray[config.number-1] + 14;
+					cds = cdsArray[config.number-1] + "/translation=".length + 1;
 					while (msg.payload[cds] != '"') {
 						output = output + msg.payload[cds];
 						cds++;
