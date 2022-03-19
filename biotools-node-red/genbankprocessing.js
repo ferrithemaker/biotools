@@ -12,7 +12,7 @@ module.exports = function(RED) {
         node.on('input', function(msg) {
 			if (config.seqtype.toLowerCase() == "origin") {
 				// get LOCUS info
-				genBankInfo = msg.payload.substring(0,msg.payload.indexOf('\n'));
+				genBankInfo = msg.payload.substring(msg.payload.indexOf('LOCUS'),msg.payload.indexOf('\n'));
 				// ORIGIN reads
 				rawOutput = msg.payload.substring(msg.payload.indexOf('ORIGIN') + 6);
 				for (var i = 0; i < rawOutput.length; i++) {
@@ -26,18 +26,22 @@ module.exports = function(RED) {
 			if (config.seqtype.toLowerCase() == "cds") {
 				// get PROTEIN ID
 				while ((cdsNumber = msg.payload.indexOf("/protein_id=",cdsNumber+1)) >= 0) proteinArray.push(cdsNumber);
-				protein = proteinArray[config.number-1] + 13;
-				while (msg.payload[protein] != '"') {
-					genBankInfo = genBankInfo + msg.payload[protein];
-					protein++;
+				if (config.number <= proteinArray.length) {
+					protein = proteinArray[config.number-1] + 13;
+					while (msg.payload[protein] != '"') {
+						genBankInfo = genBankInfo + msg.payload[protein];
+						protein++;
+					}
 				}
 				cdsNumber = -1;
 				// CDS translation
 				while ((cdsNumber = msg.payload.indexOf("/translation=",cdsNumber+1)) >= 0) cdsArray.push(cdsNumber);
-				cds = cdsArray[config.number-1] + 14;
-				while (msg.payload[cds] != '"') {
-					output = output + msg.payload[cds];
-					cds++;
+				if (config.number <= cdsArray.length) {
+					cds = cdsArray[config.number-1] + 14;
+					while (msg.payload[cds] != '"') {
+						output = output + msg.payload[cds];
+						cds++;
+					}
 				}
 			}
 			if (config.seqtype.toLowerCase() == "origin") {
