@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Get subsequence',{
+    RED.nodes.registerType('get subsequence',{
         category: 'biotools',
         color: '#def0ad',
         defaults: {
@@ -11,12 +11,12 @@
         outputs:1,
         icon: "font-awesome/fa-exchange",
         label: function() {
-            return this.name||"Get subsequence";
+            return this.name||"get subsequence";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="Get subsequence">
+<script type="text/html" data-template-name="get subsequence">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -31,6 +31,6 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="Get subsequence">
+<script type="text/html" data-help-name="get subsequence">
     <p>Returns a partial subsequence of the original input nucleotide sequence</p>
 </script>

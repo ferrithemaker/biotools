@@ -7,5 +7,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("Get subsequence",subSequence);
+    RED.nodes.registerType("get subsequence",subSequence);
 }
