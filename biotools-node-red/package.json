@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -8,12 +8,14 @@
     "biology",
     "genetics"
   ],
+  "homepage": "https://github.com/ferrithemaker/biotools/wiki",
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
       "reverse": "reverse.js",
       "rawprocessing": "rawprocessing.js",
       "fastaprocessing": "fastaprocessing.js",
+      "fastawrite": "fastawrite.js",
       "genbankprocessing": "genbankprocessing.js",
       "isdegenerate": "isdegenerate.js",
       "subsequence": "subsequence.js",
@@ -26,6 +28,10 @@
   "bugs": {
     "url": "https://github.com/ferrithemaker/biotools/issues",
     "email": "ferri.fc@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferrithemaker/biotools.git"
   },
   "description": "bioinformatics package for node-red",
   "author": "Ferran Fàbregas <ferri.fc@gmail.com> (https:/ferranfabregas.me/)",
