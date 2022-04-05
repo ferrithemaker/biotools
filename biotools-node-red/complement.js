@@ -62,7 +62,7 @@ module.exports = function(RED) {
 				}
 				output += outputchar;
 			}
-			msg.payload.sequence = output; 		
+			msg.payload.sequence = output.toUpperCase(); 		
             node.send(msg);
         });
     }
