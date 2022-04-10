@@ -25,7 +25,7 @@ module.exports = function(RED) {
 					outputchar = 'g';
 				}
 				if (inputchar == 'g') {
-					outputchar = 't';
+					outputchar = 'c';
 				}
 				if (inputchar == 'w') {
 					outputchar = 'w';
