@@ -22,7 +22,8 @@
       "seqtype": "seqtype.js",
       "complement": "complement.js",
       "transcription": "transcription.js",
-      "translation": "translation.js"
+      "translation": "translation.js",
+      "alignment": "alignment.js"
     }
   },
   "bugs": {

@@ -49,10 +49,10 @@ module.exports = function(RED) {
 				}
 			}
 			if (config.seqtype.toLowerCase() == "nucleotides") {
-				msg.payload = { "sequence": output.toUpperCase() ,"protein": "" ,"information": information}
+				msg.payload = { "id": config.idvalue,"sequence": output.toUpperCase() ,"protein": "" ,"information": information}
 			}
 			if (config.seqtype.toLowerCase() == "protein") {
-				msg.payload = { "sequence": "", "protein": output.toUpperCase() ,"information": information}
+				msg.payload = { "id": config.idvalue,"sequence": "", "protein": output.toUpperCase() ,"information": information}
 			}
             node.send(msg);
         });

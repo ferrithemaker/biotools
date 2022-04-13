@@ -45,10 +45,10 @@ module.exports = function(RED) {
 				}
 			}
 			if (config.seqtype.toLowerCase() == "origin") {
-				msg.payload = { "sequence": output.toUpperCase() ,"protein": "" ,"information": genBankInfo}
+				msg.payload = { "id": config.idvalue,"sequence": output.toUpperCase() ,"protein": "" ,"information": genBankInfo}
 			}
 			if (config.seqtype.toLowerCase() == "cds") {
-				msg.payload = { "sequence": "", "protein": output.toUpperCase() ,"information": genBankInfo}
+				msg.payload = { "id": config.idvalue,"sequence": "", "protein": output.toUpperCase() ,"information": genBankInfo}
 			}
             node.send(msg);
         });

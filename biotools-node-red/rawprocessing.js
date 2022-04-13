@@ -40,10 +40,10 @@ module.exports = function(RED) {
 				}
 			}
 			if (config.seqtype.toLowerCase() == "nucleotides") {
-				msg.payload = { "sequence": output.toUpperCase() ,"protein": "" ,"information": {"db": "", "id": "", "infodata": "", "extrainfo": ""}}
+				msg.payload = { "id": config.idvalue, "sequence": output.toUpperCase() ,"protein": "" ,"information": {"db": "", "id": "", "infodata": "", "extrainfo": ""}}
 			}
 			if (config.seqtype.toLowerCase() == "aminoacids") {
-				msg.payload = { "sequence": "", "protein": output.toUpperCase() ,"information": {"db": "", "id": "", "infodata": "", "extrainfo": ""}}
+				msg.payload = { "id": config.idvalue, "sequence": "", "protein": output.toUpperCase() ,"information": {"db": "", "id": "", "infodata": "", "extrainfo": ""}}
 			}
             node.send(msg);
         });
