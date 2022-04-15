@@ -10,6 +10,7 @@ This package is a node-red module implementing some genetics bioinformatic tools
 - Translation.
 - Sequence management.
 - Hamming distance.
+- Transition / transversion ratio.
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 
