@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -20,10 +20,10 @@
       "isdegenerate": "isdegenerate.js",
       "subsequence": "subsequence.js",
       "seqtype": "seqtype.js",
+      "seqcount": "seqcount.js",
       "complement": "complement.js",
       "transcription": "transcription.js",
-      "translation": "translation.js",
-      "alignment": "alignment.js"
+      "translation": "translation.js"
     }
   },
   "bugs": {

@@ -19,7 +19,7 @@ module.exports = function(RED) {
 							char == 's' || char == 'y' || char == 'm' ||
 							char == 'w' || char == 'r' || char == 'b' ||
 							char == 'd' || char == 'h' || char == 'v' ||
-							char == '-' ) {
+							char == 'n' || char == '-' ) {
 								output += char;
 						}
 					}
