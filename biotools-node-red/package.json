@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -25,7 +25,8 @@
       "transcription": "transcription.js",
       "translation": "translation.js",
       "hamming": "hamming.js",
-      "ttratio": "ttratio.js"
+      "ttratio": "ttratio.js",
+      "alignment": "alignment.js"
     }
   },
   "bugs": {
@@ -38,5 +39,8 @@
   },
   "description": "bioinformatics package for node-red",
   "author": "Ferran Fàbregas <ferri.fc@gmail.com> (https:/ferranfabregas.me/)",
-  "license": "GNU"
+  "license": "GNU",
+  "dependencies": {
+    "wunsch": "^1.0.2"
+  }
 }

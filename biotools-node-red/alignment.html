@@ -3,7 +3,10 @@
         category: 'biotools',
         color: '#def0ad',
         defaults: {
-            name: {value:""}
+            name: {value:""},
+            gap: {value:"-1"},
+            miss: {value:-1},
+            match: {value:1}
         },
         inputs:1,
         outputs:1,
@@ -18,6 +21,18 @@
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-gap"><i class="fa fa-tag"></i> Gap</label>
+        <input type="text" id="node-input-gap" placeholder="Gap">
+    </div>
+    <div class="form-row">
+        <label for="node-input-miss"><i class="fa fa-tag"></i> Miss</label>
+        <input type="text" id="node-input-miss" placeholder="Miss">
+    </div>
+    <div class="form-row">
+        <label for="node-input-match"><i class="fa fa-tag"></i> Match</label>
+        <input type="text" id="node-input-match" placeholder="Match">
     </div>
 </script>
 

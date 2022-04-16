@@ -5,12 +5,13 @@ This package is a node-red module implementing some genetics bioinformatic tools
 - Genbank file reading and parsing.
 - Sequence type and nucleotide counting.
 - Reverse sequencing.
-- Complementary sequence (Parameters: ADN / ARN).
+- Complementary sequence.
 - Transcription.
 - Translation.
 - Sequence management.
 - Hamming distance.
 - Transition / transversion ratio.
+- Alignment analysis (needleman-wunsch algorithm)
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 
