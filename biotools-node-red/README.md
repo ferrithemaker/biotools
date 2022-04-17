@@ -13,6 +13,7 @@ This package is a node-red module implementing some genetics bioinformatic tools
 - Hamming distance.
 - Transition / transversion ratio.
 - Alignment analysis (needleman-wunsch algorithm)
+- Motif scores based on PFM matrix.
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 

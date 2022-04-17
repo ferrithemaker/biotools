@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -27,7 +27,8 @@
       "hamming": "hamming.js",
       "ttratio": "ttratio.js",
       "alignment": "alignment.js",
-      "jasparprocessing": "jasparprocessing.js"
+      "jasparprocessing": "jasparprocessing.js",
+      "motif-pfm": "motif-pfm.js"
     }
   },
   "bugs": {

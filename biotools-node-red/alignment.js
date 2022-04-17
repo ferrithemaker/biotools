@@ -137,5 +137,5 @@ module.exports = function(RED) {
             
         });
     }
-    RED.nodes.registerType("alignment",alignmentNode);
+    RED.nodes.registerType("alignment analysis",alignmentNode);
 }
