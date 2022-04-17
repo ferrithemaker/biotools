@@ -2,6 +2,7 @@ This package is a node-red module implementing some genetics bioinformatic tools
 
 - RAW sequence preprocessing.
 - FASTA file reading and parsing.
+- JASPAR PFM file reading and parsing.
 - Genbank file reading and parsing.
 - Sequence type and nucleotide counting.
 - Reverse sequencing.
