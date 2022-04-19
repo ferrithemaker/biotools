@@ -1,0 +1,40 @@
+{
+  "name": "node-red-contrib-biotools-sequence",
+  "version": "0.0.1",
+  "keywords": [
+    "node-red",
+    "bioinformatics",
+    "bio",
+    "biology",
+    "genomics",
+    "genetics"
+  ],
+  "homepage": "https://github.com/ferrithemaker/biotools/wiki",
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "reverse": "reverse.js",
+      "isdegenerate": "isdegenerate.js",
+      "subsequence": "subsequence.js",
+      "seqtype": "seqtype.js",
+      "seqcount": "seqcount.js",
+      "complement": "complement.js",
+      "transcription": "transcription.js",
+      "translation": "translation.js"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/ferrithemaker/biotools/issues",
+    "email": "ferri.fc@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferrithemaker/biotools.git"
+  },
+  "description": "bioinformatics package for node-red",
+  "author": "Ferran Fàbregas <ferri.fc@gmail.com> (https:/ferranfabregas.me/)",
+  "license": "GNU",
+  "dependencies": {
+    "wunsch": "^1.0.2"
+  }
+}

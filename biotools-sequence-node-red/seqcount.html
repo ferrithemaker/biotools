@@ -1,0 +1,64 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sequence count',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            degenerate: {value: "no"},
+            datatype: {value: "all"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"sequence count";
+        },
+        oneditprepare: function() {
+			$("#node-input-degenerate").typedInput({
+				types: [
+				{
+					value: "degenerate",
+					options: [
+						{ value: "no", label: "No"},
+						{ value: "yes", label: "Yes"}
+					]
+				}
+				]
+			});
+			$("#node-input-datatype").typedInput({
+				types: [
+				{
+					value: "datatype",
+					options: [
+						{ value: "a", label: "Adenine"},
+						{ value: "c", label: "Cytosine"},
+						{ value: "g", label: "Guanine"},
+						{ value: "t", label: "Thymine"},
+						{ value: "u", label: "Uracil"},
+						{ value: "all", label: "All"}
+					]
+				}
+				]
+			});
+		}
+    });
+</script>
+
+<script type="text/html" data-template-name="sequence count">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+		<label for="node-input-degenerate"><i class="fa fa-tag"></i> Allow degenerate base symbols</label>
+        <input type="text" id="node-input-degenerate">
+    </div>
+    <div class="form-row">
+		<label for="node-input-datatype"><i class="fa fa-tag"></i> Data type</label>
+        <input type="text" id="node-input-datatype">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="sequence count">
+    <p>Counts the number of nucleotides of the sequence [A/C/G/T/U/All]</p>
+</script>
