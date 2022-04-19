@@ -1,11 +1,10 @@
-This package is part of *node-red-contrib-biotools* project, this node-red module implements some sequence management related genomic and bioinformatic tools such as:
+This package is part of *node-red-contrib-biotools* project, thisa node-red module implements genomic sequence analysis and bioinformatic tools such as:
 
-- Sequence type detection.
-- Reverse sequencing.
-- Complementary sequence.
-- Transcription.
-- Translation.
-- Sequence management.
+- Nucleotide counting.
+- Hamming distance.
+- Transition / transversion ratio.
+- Alignment analysis (needleman-wunsch algorithm)
+- Motif scores based on PFM matrix.
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 

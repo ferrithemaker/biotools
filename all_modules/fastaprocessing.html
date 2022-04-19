@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('processing FASTA file',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            seqtype: {value:"nucleotides"},
+            number: {value:1},
+            idvalue: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"processing FASTA file";
+        },
+        oneditprepare: function() {
+			$("#node-input-seqtype").typedInput({
+				types: [
+				{
+					value: "seqtype",
+					options: [
+						{ value: "nucleotides", label: "Nucleotides"},
+						{ value: "protein", label: "Protein"}
+					]
+				}
+				]
+			});
+		}
+    });
+</script>
+
+<script type="text/html" data-template-name="processing FASTA file">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+		<label for="node-input-seqtype"><i class="fa fa-tag"></i> Input</label>
+        <input type="text" id="node-input-seqtype">
+    </div>
+    <div class="form-row">
+        <label for="node-input-number"><i class="fa fa-tag"></i> Seq. Number</label>
+        <input type="text" id="node-input-number" placeholder="Seq. Number">
+    </div>
+    <div class="form-row">
+		<label for="node-input-idvalue"><i class="fa fa-tag"></i> ID</label>
+        <input type="text" id="node-input-idvalue">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="processing FASTA file">
+    <p>Reads generic FASTA file</p>
+</script>

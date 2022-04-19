@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('hamming distance',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"hamming distance";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="hamming distance">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="hamming distance">
+    <p>Calculates hamming distance between two nucleotide sequences</p>
+</script>

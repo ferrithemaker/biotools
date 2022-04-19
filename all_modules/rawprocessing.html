@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    RED.nodes.registerType('processing RAW data',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            seqtype: {value:"nucleotides"},
+            degenerate: {value:"no"},
+            idvalue: {value:""}
+            
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"processing (RAW)";
+        },
+        oneditprepare: function() {
+			$("#node-input-seqtype").typedInput({
+				types: [
+				{
+					value: "seqtype",
+					options: [
+						{ value: "nucleotides", label: "Nucleotides"},
+						{ value: "aminoacids", label: "Amino acids"}
+					]
+				}
+				]
+			}),
+			$("#node-input-degenerate").typedInput({
+				types: [
+				{
+					value: "degenerate",
+					options: [
+						{ value: "no", label: "No"},
+						{ value: "yes", label: "Yes"}
+					]
+				}
+				]
+			});
+		}
+		
+    });
+</script>
+
+<script type="text/html" data-template-name="processing RAW data">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+		<label for="node-input-seqtype"><i class="fa fa-tag"></i> Input</label>
+        <input type="text" id="node-input-seqtype">
+    </div>
+    <div class="form-row">
+		<label for="node-input-degenerate"><i class="fa fa-tag"></i> Allow degenerate base symbols</label>
+        <input type="text" id="node-input-degenerate">
+    </div>
+    <div class="form-row">
+		<label for="node-input-idvalue"><i class="fa fa-tag"></i> ID</label>
+        <input type="text" id="node-input-idvalue">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="processing RAW data">
+    <p>Cleans a RAW non formated ADN / ARN sequence removing all not nucleotide / proteine data</p>
+</script>

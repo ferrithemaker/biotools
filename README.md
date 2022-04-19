@@ -1,11 +1,3 @@
-This package is the main module of *node-red-contrib-biotools* project. This node-red module implements the reading, parsing and writing several genomic and bioinformatic formated data, such as:
-
-- RAW sequence preprocessing.
-- FASTA file reading, writing and parsing.
-- JASPAR PFM file reading and parsing.
-- Genbank file reading and parsing.
-
-
 The whole *biotools* project has three different node-red modules:
 
 - node-red-contrib-biotools: data input / output and parsing.

@@ -1,11 +1,19 @@
-This package is part of *node-red-contrib-biotools* project, this node-red module implements some sequence management related genomic and bioinformatic tools such as:
+This package is a node-red module implementing some genomic and bioinformatic tools such as:
 
-- Sequence type detection.
+- RAW sequence preprocessing.
+- FASTA file reading and parsing.
+- JASPAR PFM file reading and parsing.
+- Genbank file reading and parsing.
+- Sequence type and nucleotide counting.
 - Reverse sequencing.
 - Complementary sequence.
 - Transcription.
 - Translation.
 - Sequence management.
+- Hamming distance.
+- Transition / transversion ratio.
+- Alignment analysis (needleman-wunsch algorithm)
+- Motif scores based on PFM matrix.
 
 This package is an alpha version for testing only purposes and there is no guarantee that the results will be accurate. 
 

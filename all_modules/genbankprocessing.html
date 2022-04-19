@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('processing Genbank file',{
+        category: 'biotools',
+        color: '#def0ad',
+        defaults: {
+            name: {value:""},
+            seqtype: {value:"origin"},
+            number: {value:1},
+            idvalue: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name||"processing Genbank file";
+        },
+        oneditprepare: function() {
+			$("#node-input-seqtype").typedInput({
+				types: [
+				{
+					value: "seqtype",
+					options: [
+						{ value: "origin", label: "Origin"},
+						{ value: "cds", label: "Features"}
+					]
+				}
+				]
+			});
+		}
+    });
+</script>
+
+<script type="text/html" data-template-name="processing Genbank file">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+		<label for="node-input-seqtype"><i class="fa fa-tag"></i> Input</label>
+        <input type="text" id="node-input-seqtype">
+    </div>
+    <div class="form-row">
+        <label for="node-input-number"><i class="fa fa-tag"></i> CDS Number</label>
+        <input type="text" id="node-input-number" placeholder="CDS Number">
+    </div>
+    <div class="form-row">
+		<label for="node-input-idvalue"><i class="fa fa-tag"></i> ID</label>
+        <input type="text" id="node-input-idvalue">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="processing Genbank file">
+    <p>Reads generic Genbank file</p>
+</script>

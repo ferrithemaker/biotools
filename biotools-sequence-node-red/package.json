@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-biotools-sequence",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -17,7 +17,6 @@
       "isdegenerate": "isdegenerate.js",
       "subsequence": "subsequence.js",
       "seqtype": "seqtype.js",
-      "seqcount": "seqcount.js",
       "complement": "complement.js",
       "transcription": "transcription.js",
       "translation": "translation.js"
@@ -29,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferrithemaker/biotools.git"
+    "url": "git+https://github.com/ferrithemaker/biotools.git"
   },
-  "description": "bioinformatics package for node-red",
+  "description": "bioinformatics package for node-red (sequence management)",
   "author": "Ferran Fàbregas <ferri.fc@gmail.com> (https:/ferranfabregas.me/)",
   "license": "GNU",
   "dependencies": {

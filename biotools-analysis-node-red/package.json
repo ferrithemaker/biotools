@@ -1,6 +1,6 @@
 {
-  "name": "node-red-contrib-biotools",
-  "version": "0.0.43",
+  "name": "node-red-contrib-biotools-analysis",
+  "version": "0.0.2",
   "keywords": [
     "node-red",
     "bioinformatics",
@@ -13,11 +13,11 @@
   "node-red": {
     "version": ">=2.0.0",
     "nodes": {
-      "rawprocessing": "rawprocessing.js",
-      "fastaprocessing": "fastaprocessing.js",
-      "fastawrite": "fastawrite.js",
-      "genbankprocessing": "genbankprocessing.js",
-      "jasparprocessing": "jasparprocessing.js"
+      "hamming": "hamming.js",
+      "ttratio": "ttratio.js",
+      "seqcount": "seqcount.js",
+      "alignment": "alignment.js",
+      "motif-pfm": "motif-pfm.js"
     }
   },
   "bugs": {
@@ -28,7 +28,7 @@
     "type": "git",
     "url": "https://github.com/ferrithemaker/biotools.git"
   },
-  "description": "bioinformatics package for node-red (input / output)",
+  "description": "bioinformatics package for node-red (genomic analysis)",
   "author": "Ferran Fàbregas <ferri.fc@gmail.com> (https:/ferranfabregas.me/)",
   "license": "GNU",
   "dependencies": {
