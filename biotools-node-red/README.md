@@ -1,4 +1,4 @@
-This package is a node-red module implementing some genetics bioinformatic tools such as:
+This package is a node-red module implementing some genomic and bioinformatic tools such as:
 
 - RAW sequence preprocessing.
 - FASTA file reading and parsing.
