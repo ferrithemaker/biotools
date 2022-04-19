@@ -1,11 +1,12 @@
 {
   "name": "node-red-contrib-biotools",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "keywords": [
     "node-red",
     "bioinformatics",
     "bio",
     "biology",
+    "genomics",
     "genetics"
   ],
   "homepage": "https://github.com/ferrithemaker/biotools/wiki",
