@@ -17,6 +17,7 @@ Functionalities:
 - Transcription. (node-red-contrib-biotools-biotools-sequence package) 
 - Translation. (node-red-contrib-biotools-biotools-sequence package)
 - Sequence management. (node-red-contrib-biotools-sequence package)
+- Degenerate sequences.  (node-red-contrib-biotools-sequence package)
 - Hamming distance. (node-red-contrib-biotools-analysis package)
 - Transition / transversion ratio. (node-red-contrib-biotools-analysis package)
 - Alignment analysis (needleman-wunsch algorithm) (node-red-contrib-biotools-analysis package)
